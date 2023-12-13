@@ -12,7 +12,6 @@ const port = process.env.PORT || 3000
 const koa = new Koa()
 koa.use(KoaRestful())
 koa.listen(port)
-
 const ips = allIPs()
 if (ips.length > 0) {
     console.group(chalk.green('\n💥服务启动成功：'))
