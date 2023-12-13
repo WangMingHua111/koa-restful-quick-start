@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "dev": "cross-env NODE_ENV=development nodemon --exec ts-node --watch src/**/*.ts src/index.ts",
+        "dev": "cross-env NODE_ENV=development nodemon --watch src --ext ts --exec ts-node src/index.ts",
         "build": "rimraf -rf ./dist && npx tsc -p tsconfig.dist.json",
         "serve": "node ./dist/index.js"
     },
