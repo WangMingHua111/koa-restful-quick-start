@@ -1,4 +1,4 @@
-import { CacheService, Controller, FromBody, FromQuery, HttpDelete, HttpGet, HttpHead, HttpOptions, HttpPatch, HttpPost, HttpPut, Injection, LoggerService } from '@wangminghua/koa-restful'
+import { CacheService, Controller, FromBody, FromHeader, FromQuery, FromRoute, HttpDelete, HttpGet, HttpHead, HttpOptions, HttpPatch, HttpPost, HttpPut, Injection, LoggerService } from '@wangminghua/koa-restful'
 
 /**
  * Demo服务
@@ -17,7 +17,7 @@ export class DemoController {
     cache!: CacheService
 
     /**
-     * 测试接口
+     * 测试接口，带查询参数
      * @returns
      */
     @HttpGet()
@@ -50,6 +50,19 @@ export class DemoController {
         return {
             ...body,
             name: 'hello ' + body.name,
+        }
+    }
+
+    /**
+     * 路由参数和请求头参数
+     * @param body
+     * @returns
+     */
+    @HttpGet('test2/:id')
+    test2(@FromRoute() id: string, @FromHeader() name: string = 'hipy') {
+        return {
+            id,
+            name,
         }
     }
     /**
