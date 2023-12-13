@@ -1,0 +1,25 @@
+{
+    // These tasks will run in order when initializing your CodeSandbox project.
+    "setupTasks": [
+        {
+            "name": "Install Global Dependencies",
+            "command": "npm install -g cross-env nodemon ts-node typescript chalk@4.1.2 dotenv@^16.3.1 rimraf openapi-types"
+        },
+        {
+            "name": "Install Dependencies",
+            "command": "npm install"
+        }
+    ],
+
+    // These tasks can be run from CodeSandbox. Running one will open a log in the app.
+    "tasks": {
+        "dev": {
+            "name": "dev",
+            "command": "npm run dev",
+            "runAtStart": true,
+            "preview": {
+                "port": 3000
+            }
+        }
+    }
+}
