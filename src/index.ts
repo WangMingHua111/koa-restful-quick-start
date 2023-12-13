@@ -1,6 +1,7 @@
 import KoaRestful from '@wangminghua/koa-restful'
 import chalk from 'chalk'
 import Koa from 'koa'
+import KoaStatic from 'koa-static'
 
 import './core' // 加载核心
 import './service' // 加载api服务
@@ -11,6 +12,7 @@ const port = process.env.PORT || 3000
 
 const koa = new Koa()
 koa.use(KoaRestful())
+koa.use(KoaStatic('./static'))
 koa.listen(port)
 const ips = allIPs()
 if (ips.length > 0) {

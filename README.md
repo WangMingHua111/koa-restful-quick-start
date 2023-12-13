@@ -33,6 +33,12 @@ npm run build
 npm run serve
 ```
 
+## Http Serve
+
+```sh
+http://localhost:3000
+```
+
 ## 运行截图
 
 ### dev 模式
