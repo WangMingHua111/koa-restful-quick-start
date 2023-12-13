@@ -11,9 +11,10 @@ import { allIPs, isDevelopment } from './utils/share'
 const port = process.env.PORT || 3000
 
 const koa = new Koa()
-koa.use(KoaRestful())
+koa.use(KoaRestful({ logs: true }))
 koa.use(KoaStatic('./static'))
 koa.listen(port)
+
 const ips = allIPs()
 if (ips.length > 0) {
     console.group(chalk.green('\n💥服务启动成功：'))
