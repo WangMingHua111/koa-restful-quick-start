@@ -34,3 +34,15 @@ npm run serve
 ```
 
 ## 运行截图
+
+### dev 模式
+
+![dev模式运行截图](image/dev.png)
+
+### 线上模式
+
+![serve模式运行截图](image/serve.png)
+
+### 自动生成 api swagger 文档
+
+![swagger文档](image/swagger.png)
