@@ -15,9 +15,7 @@
         "koa": "^2.14.2",
         "lodash-es": "^4.17.21",
         "reflect-metadata": "^0.1.13",
-        "typescript": "^5.2.2"
-    },
-    "devDependencies": {
+        "typescript": "^5.2.2",
         "chalk": "^4.1.2",
         "cross-env": "^7.0.3",
         "dotenv": "^16.3.1",
