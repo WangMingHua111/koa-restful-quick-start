@@ -1,8 +1,7 @@
 import { CacheService, Controller, CreateAST2OpenAPI, HttpGet, Injection } from '@wangminghua/koa-restful'
 
-// import { isDevelopment } from '../utils/share'
-// 生产环境使用时屏蔽 swagger 设置 请设置 enabled: isDevelopment()
-@Controller('/swagger', { prefix: '', enabled: true })
+import { isDevelopment } from '../utils/share'
+@Controller('/swagger', { prefix: '', enabled: isDevelopment() })
 export class SwaggerController {
     @Injection()
     cache!: CacheService
