@@ -1,4 +1,4 @@
-import { CacheService, Controller, FromBody, FromHeader, FromQuery, FromRoute, HttpDelete, HttpGet, HttpHead, HttpOptions, HttpPatch, HttpPost, HttpPut, Injection, LoggerService } from '@wangminghua/koa-restful'
+import { Authorize, CacheService, Controller, FromBody, FromHeader, FromQuery, FromRoute, HttpDelete, HttpGet, HttpHead, HttpOptions, HttpPatch, HttpPost, HttpPut, Injection, LoggerService } from '@wangminghua/koa-restful'
 
 /**
  * Demo服务
@@ -16,6 +16,15 @@ export class DemoController {
     @Injection()
     cache!: CacheService
 
+    /**
+     * 测试Authorize，50%的几率会返回 401
+     * @returns
+     */
+    @Authorize()
+    @HttpGet()
+    auth() {
+        return new Date().toLocaleString()
+    }
     /**
      * 测试接口，带查询参数
      * @returns
