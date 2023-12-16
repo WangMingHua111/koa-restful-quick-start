@@ -1,4 +1,6 @@
 import { Authorize, CacheService, Controller, FromBody, FromHeader, FromQuery, FromRoute, HttpDelete, HttpGet, HttpHead, HttpOptions, HttpPatch, HttpPost, HttpPut, Injection, LoggerService } from '@wangminghua/koa-restful'
+import { CookieAuthorization, JwtBearerAuthorization, SimpleAuthorize } from '@wangminghua/koa-restful-extra'
+import { Context } from 'koa'
 
 /**
  * Demo服务
@@ -16,8 +18,34 @@ export class DemoController {
     @Injection()
     cache!: CacheService
 
+    @Injection()
+    bearer!: JwtBearerAuthorization
+
+    @Injection()
+    cookie?: CookieAuthorization
+
     /**
-     * 测试Authorize，50%的几率会返回 401
+     * 执行登录
+     * @param ctx
+     * @returns
+     */
+    @HttpGet()
+    login(ctx: Context) {
+        const token = this.bearer.sign({
+            data: new Date().toLocaleString(),
+        })
+        // 如果有 cookie 鉴权，写入cookie
+        if (this.cookie) {
+            const cookieToen = this.cookie.sign({
+                data: new Date().toLocaleString(),
+            })
+            ctx.cookies.set(this.cookie.authorityHeader, cookieToen)
+        }
+        return token
+    }
+
+    /**
+     * 测试Authorize
      * @returns
      */
     @Authorize()
@@ -25,6 +53,17 @@ export class DemoController {
     auth() {
         return new Date().toLocaleString()
     }
+
+    /**
+     * 测试SimpleAuthorize
+     * @returns
+     */
+    @SimpleAuthorize(['Bearer', 'Cookie'])
+    @HttpGet()
+    auth2() {
+        return new Date().toLocaleString()
+    }
+
     /**
      * 测试接口，带查询参数
      * @returns
