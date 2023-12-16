@@ -13,7 +13,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "@wangminghua/koa-restful": "^1.0.0-alpha.2",
+        "@wangminghua/koa-restful": "^1.0.0-alpha.4",
         "@wangminghua/koa-restful-extra": "^0.0.3",
         "chalk": "^4.1.2",
         "cross-env": "^7.0.3",
