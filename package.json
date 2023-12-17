@@ -1,6 +1,6 @@
 {
     "name": "backend",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "",
     "main": "index.js",
     "scripts": {
@@ -14,7 +14,7 @@
     "license": "ISC",
     "dependencies": {
         "@wangminghua/koa-restful": "^1.0.6",
-        "@wangminghua/koa-restful-extra": "^0.0.5",
+        "@wangminghua/koa-restful-extra": "^0.0.6",
         "chalk": "^4.1.2",
         "cross-env": "^7.0.3",
         "dotenv": "^16.3.1",
