@@ -1,4 +1,4 @@
-import { bootstrap } from '@wangminghua/koa-restful-extra'
+import { bootstrap } from '@wangminghua/koa-restful/extra'
 import KoaStatic from 'koa-static'
 
 import './core' // 加载核心

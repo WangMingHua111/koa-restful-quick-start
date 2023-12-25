@@ -1,6 +1,6 @@
 import './env' // 加载环境变量
 
-import { AddConsoleLoggerService, AddCookieAuthentication, AddJwtBearerAuthentication, AddMemoryCacheService, AddSwaggerUI } from '@wangminghua/koa-restful-extra'
+import { AddConsoleLoggerService, AddCookieAuthentication, AddJwtBearerAuthentication, AddMemoryCacheService, AddSwaggerUI } from '@wangminghua/koa-restful/extra'
 
 AddConsoleLoggerService() // 加载日志服务
 // 加载身份认证服务

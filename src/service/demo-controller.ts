@@ -1,5 +1,5 @@
 import { Authorize, CacheService, Controller, FromBody, FromHeader, FromQuery, FromRoute, HttpDelete, HttpGet, HttpHead, HttpOptions, HttpPatch, HttpPost, HttpPut, Injection, LoggerService } from '@wangminghua/koa-restful'
-import { CookieAuthorization, JwtBearerAuthorization, SimpleAuthorize } from '@wangminghua/koa-restful-extra'
+import { CookieAuthorization, JwtBearerAuthorization, SimpleAuthorize } from '@wangminghua/koa-restful/extra'
 import { Context } from 'koa'
 
 /**
@@ -11,15 +11,15 @@ export class DemoController {
      * 日志
      */
     @Injection()
-    logger!: LoggerService
+    logger: LoggerService
     /**
      * 缓存
      */
     @Injection()
-    cache!: CacheService
+    cache: CacheService
 
     @Injection()
-    bearer!: JwtBearerAuthorization
+    bearer: JwtBearerAuthorization
 
     @Injection()
     cookie?: CookieAuthorization
