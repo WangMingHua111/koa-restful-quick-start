@@ -1,4 +1,4 @@
-import { swagger2html } from '@wangminghua/koa-restful-extra'
+import { swagger2html } from '@wangminghua/koa-restful/extra'
 import fs from 'fs'
 import { join } from 'path'
 
