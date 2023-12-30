@@ -9,4 +9,6 @@
 //     await import(path.resolve(__dirname, f))
 // })
 
+import './demo-auth-controller'
 import './demo-controller'
+import './demo-hook-controller'
