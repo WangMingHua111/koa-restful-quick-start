@@ -54,7 +54,7 @@ export class DemoController {
   }
 
   /**
-   * 提交body
+   * 上传文件
    * @param body
    * @returns
    */
