@@ -7,7 +7,7 @@ import './service' // 加载api
 const port = process.env.PORT || 3000
 
 bootstrap(port, undefined, {
-    afterHook: (koa) => {
-        koa.use(KoaStatic('./static'))
-    },
+  afterHook: (koa) => {
+    koa.use(KoaStatic('./static'))
+  },
 })

@@ -54,6 +54,16 @@ export class DemoController {
   }
 
   /**
+   * 提交body
+   * @param body
+   * @returns
+   */
+  @HttpPost()
+  testFile(@FromBody({ multipart: true }) files) {
+    return files
+  }
+
+  /**
    * 路由参数和请求头参数
    * @param body
    * @returns
