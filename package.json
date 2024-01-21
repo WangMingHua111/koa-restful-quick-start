@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon --watch src --ext ts --exec ts-node src/index.ts",
+    "dev": "cross-env NODE_ENV=development nodemon --watch src --ext ts --exec ts-node -r tsconfig-paths/register src/index.ts",
     "build": "rimraf -rf ./dist && npx tsc -p tsconfig.dist.json",
+    "postbuild": "npx tsc-alias -p tsconfig.dist.json",
     "build-swagger": "rimraf -rf ./static/swagger && ts-node ./build/swagger.ts",
     "clean": "rimraf -rf ./dist && rimraf -rf ./static/swagger",
     "serve": "node ./dist/index.js"
@@ -26,6 +27,8 @@
     "reflect-metadata": "^0.1.13",
     "rimraf": "^5.0.5",
     "ts-node": "^10.9.1",
+    "tsc-alias": "^1.8.8",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.2.2"
   }
 }
